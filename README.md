@@ -70,9 +70,9 @@ You can now use type="module" `<script>`s to import supabase-js from CDNs, like:
 import { createClient } from '@supabase/supabase-js'
 
 // Provide a custom `fetch` implementation as an option
-const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key', {
-  fetch: (...args) => fetch(...args),
-})
+const supabase = createClient('https://xyzcompany.supabase.co', 'public-anon-key', 
+  { global: { fetch: (...args) => fetch(...args) } }
+)
 ```
 
 ## Sponsors
